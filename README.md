@@ -33,3 +33,15 @@
     'paramstr' => 'lbfK571EUHt7oDEYA46D0ylY5zZhbuIi-appidSxmfErjzem3ylFBAout_trade_no12312300123123-1559295437'
 ]
 
+##3.str
+###1.1 random 
+```
+Str::random($len,[$big:true],[$num:true],[$lower:true],[$s:false])
+```
+#### 参数
+1. $length 生成长度
+2. $Big 是否包含大写字母
+3. $Num 是否包含数字
+4. $lower 是否包含小写字母
+5. $s 是否包含符号
+
