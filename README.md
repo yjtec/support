@@ -33,8 +33,8 @@
     'paramstr' => 'lbfK571EUHt7oDEYA46D0ylY5zZhbuIi-appidSxmfErjzem3ylFBAout_trade_no12312300123123-1559295437'
 ]
 
-##3.str
-###1.1 random 
+## 3.str
+###3.1 random 
 ```
 Str::random($len,[$big:true],[$num:true],[$lower:true],[$s:false])
 ```
@@ -44,4 +44,21 @@ Str::random($len,[$big:true],[$num:true],[$lower:true],[$s:false])
 3. $Num 是否包含数字
 4. $lower 是否包含小写字母
 5. $s 是否包含符号
+
+### 3.2 cc2 驼峰转字符串
+```
+Str::cc2($camelCaps,[$separator:'-'])
+```
+#### 参数
+1. $camelCaps [string] 驼峰命名字符串
+2. $separator [string] 连接字符串 可选
+
+### 3.3 uncc2 连接符转驼峰
+
+```
+Str::uncc2($uncamelized_words,[$separator:'-'])
+```
+
+同上
+
 

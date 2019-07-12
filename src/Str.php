@@ -24,4 +24,14 @@ class Str{
         }
         return $str;
     }
+
+    public static function cc2($camelCaps,$separator = '-'){
+        return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $camelCaps));
+    }
+
+    public static function uncc2($uncamelized_words,$separator='-')
+    {
+        $uncamelized_words = $separator. str_replace($separator, " ", strtolower($uncamelized_words));
+        return ltrim(str_replace(" ", "", ucwords($uncamelized_words)), $separator );
+    }
 }
