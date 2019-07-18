@@ -61,4 +61,35 @@ Str::uncc2($uncamelized_words,[$separator:'-'])
 
 同上
 
+## 3.Nested
+
+#无限级分类
+
+## 3.1.unlimitedForLevel(cate,[html='-'],[$pid=0],$level=1) static
+
+>无线分类组合成一位数组
+
+```
+Nested::unlimitedForLevel($arr)
+```
+
+## 3.2.unlimitedForlayer($cate,[$name="child"],[$pid=0])
+
+> 返回多维数组
+
+```
+Nested::unlimitedForlayer($cate)
+```
+
+## 3.3.getParents($cate,$pid)
+
+> 返回子分类的所有父级ID
+
+## 3.4.getChildrenId($cate,$pid)
+
+> s返回所有子分类的ID
+
+## 3.5.getChildren($cate,$pid)
+
+> 返回所有子级分类
 
