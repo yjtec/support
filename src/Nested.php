@@ -33,12 +33,13 @@ class Nested
      * @param  integer $pid  父级分类ID。默认为0，表示顶级分类
      * @return [type]        [description]
      */
-    public static function unlimitedForlayer($cate, $name = 'child', $pid = 0)
+    public static function unlimitedForlayer($cate, $name = 'child', $pid = 0, $level = 1)
     {
         $arr = array();
         foreach ($cate as &$v) {
             if ($v['pid'] == $pid) {
-                $v[$name] = self::unlimitedForlayer($cate, $name, $v['id']);
+                $v['level'] = $level;
+                $v[$name]   = self::unlimitedForlayer($cate, $name, $v['id'], $level + 1);
                 if (count($v[$name]) == 0) {
                     unset($v[$name]);
                 }
