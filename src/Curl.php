@@ -8,9 +8,10 @@ class Curl
     {
         $this->method = $method;
     }
-    public function curlGet($url, $post_data = 0)
+    public function curlGet($url, $post_data = 0, $header =[])
     {
         $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HTTPHEADER,$header);
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         if ($this->method == 'post') {
@@ -33,9 +34,9 @@ class Curl
         if (count($arguments) == 1) {
             list($url) = $arguments;
         } else {
-            list($url, $data) = $arguments;
+            list($url, $data,$header) = $arguments;
         }
         $obj = new self($method);
-        return $obj->curlGet($url, $data);
+        return $obj->curlGet($url, $data,$header);
     }
 }
