@@ -54,4 +54,9 @@ class Curl
         $obj = self::getInstance($method);
         return $obj->curlGet($url, $data, $header);
     }
+
+    public function __destruct()
+    {
+        curl_close($this->ch);
+    }
 }
