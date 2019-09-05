@@ -15,6 +15,12 @@
     echo Curl::post('http://www.baidu.com',['a'=>1,'b'=>2]);
 ```
 
+### 1.3 Curl::put($url,$data);
+
+```
+    echo Curl::put('http://www.baidu.com',['a'=>1,'b'=>2]);
+```
+
 ## 2.sign
 
 ### 1.1 sign::make($secret,$timestamp,$data,[debug:true|false]);
