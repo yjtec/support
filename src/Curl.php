@@ -7,7 +7,7 @@ class Curl
     private static $instance = null;
     public function __construct($method)
     {
-        $this->ch     = curl_init();
+        $this->ch = curl_init();
         $this->method = $method;
     }
     private function __clone()
@@ -33,6 +33,10 @@ class Curl
             curl_setopt($this->ch, CURLOPT_POSTFIELDS, $post_data);
         } elseif ($this->method == 'get') {
             curl_setopt($this->ch, CURLOPT_HEADER, 0);
+        } elseif ($this->method == 'put') {
+            curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+
+            curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($post_data));
         }
         $output = curl_exec($this->ch);
         return $output;
@@ -42,7 +46,7 @@ class Curl
     //Curl::post($url,['asdf'=>1])
     public static function __callStatic($method, $arguments)
     {
-        $data   = [];
+        $data = [];
         $header = [];
         if (count($arguments) == 1) {
             list($url) = $arguments;
