@@ -37,6 +37,8 @@ class Curl
             curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 
             curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($post_data));
+        } elseif ($this->method == 'delete') {
+            curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
         }
         $output = curl_exec($this->ch);
         return $output;

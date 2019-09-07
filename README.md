@@ -21,6 +21,12 @@
     echo Curl::put('http://www.baidu.com',['a'=>1,'b'=>2]);
 ```
 
+### 1.4 Curl::delete($url);
+
+```
+    echo Curl::delete('http://www.baidu.com');
+```
+
 ## 2.sign
 
 ### 1.1 sign::make($secret,$timestamp,$data,[debug:true|false]);

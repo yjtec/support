@@ -12,3 +12,5 @@ echo Curl::post('http://www.baidu.com', ['a' => 1, 'b' => 2]);
 echo Curl::post('http://www.baidu.com', ['a' => 1, 'b' => 2]);
 
 echo Curl::put('http://www.baidu.com', ['a' => 1, 'b' => 2]);
+
+echo Curl::delete('http://www.baidu.com');
