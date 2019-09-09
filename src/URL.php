@@ -36,7 +36,8 @@ class URL
         $paramStr = implode('&', $tmp);
 
         if ($uri) {
-            return $uri .'?' . $paramStr;
+            $ex = count($tmp) ? '?' : '';
+            return $uri . $ex . $paramStr;
         }
 
         return $paramStr;

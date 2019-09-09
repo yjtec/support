@@ -13,5 +13,6 @@ $urlParams = [
 
 //echo URL::build($urlParams,'http://dev.mapbd.360vrsh.com/user');
 //
-URL::init($url)->except('ticket')->url();
+//URL::init($url)->except('ticket')->url();
+echo URL::build(['ab'=>1,'c'=>2],'http://www.baidu.com');
 ?>
