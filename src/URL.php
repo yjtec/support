@@ -4,7 +4,7 @@ namespace Yjtec\Support;
 class URL
 {
     protected $urlArr = [];
-    
+
     public static function parse($uri)
     {
         return parse_url($uri);
@@ -41,5 +41,28 @@ class URL
         }
 
         return $paramStr;
+    }
+    public static function uri($url)
+    {
+        $arr = self::parse($url);
+        return $arr['scheme'] . "://" . $arr['host'] . $arr['path'];
+    }
+    public static function except($filter = [], $url)
+    {
+        $uri    = self::uri($url);
+        $params = self::params($url);
+        $keys   = array_keys($params);
+        if(is_array($filter)){
+            foreach ($filter as $v) {
+                if (in_array($v, $keys)) {
+                    unset($params[$v]);
+                }
+            }
+        }else{
+            if(in_array($filter, $keys)){
+                unset($params[$filter]);
+            }
+        }
+        return self::build($params, $uri);
     }
 }
