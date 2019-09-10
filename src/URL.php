@@ -45,7 +45,20 @@ class URL
     public static function uri($url)
     {
         $arr = self::parse($url);
-        return $arr['scheme'] . "://" . $arr['host'] . $arr['path'];
+        $uri = '';
+        if(isset($arr['scheme'])){
+            $uri .= $arr['scheme'] . "://";
+        }
+        if(isset($arr['host'])){
+            $uri .= $arr['host'];
+        }
+        if(isset($arr['port'])){
+            $uri .= ':'.$arr['port'];
+        }
+        if(isset($arr['path'])){
+            $uri .= $arr['path'];
+        }
+        return $uri;
     }
     public static function except($filter = [], $url)
     {
