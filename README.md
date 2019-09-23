@@ -105,3 +105,25 @@ Nested::unlimitedForlayer($cate)
 
 > 返回所有子级分类
 
+## 4.URL操作
+
+## 4.1 URL::parse(String $url) 
+
+> 解析URL
+
+## 4.2 URL::params(String $url)
+
+> 解析URL上的参数
+
+## 4.3 URL::build(Array $params,String $uri) 
+
+> 数组转为url参数
+
+## 4.4 URL::uri(String $uri) 
+
+> 返回url中的url信息
+
+
+## 4.5 URL::except(String|Array $filter,$url)
+
+> 清楚url参数中的某个值

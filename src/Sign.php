@@ -8,7 +8,12 @@ class Sign
         ksort($params);
         $paramstr = '';
         foreach ($params as $k => $v) {
-            $paramstr .= "{$k}{$v}";
+            if (is_array($v)){
+                $paramstr .= "{$k}[]".implode(',',$v);
+            } else {
+
+                $paramstr .= "{$k}{$v}";
+            }
         }
 
         $str        = "{$secret}-{$paramstr}-{$timeStamp}";
