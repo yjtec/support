@@ -31,7 +31,7 @@ class Curl
         if ($this->method == 'post') {
             curl_setopt($this->ch, CURLOPT_POST, 1);
 
-            curl_setopt($this->ch, CURLOPT_POSTFIELDS, $post_data);
+            curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($post_data));
         } elseif ($this->method == 'get') {
             curl_setopt($this->ch, CURLOPT_HEADER, 0);
         } elseif ($this->method == 'put') {
