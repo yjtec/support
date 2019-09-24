@@ -16,6 +16,7 @@ class Curl
     {
         if (self::$instance instanceof self) {
             curl_reset(self::$instance->ch);
+            self::$instance->method = $method;
             return self::$instance;
         } else {
             self::$instance = new self($method);
